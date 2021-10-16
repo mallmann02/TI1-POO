@@ -11,12 +11,21 @@ for arg in argsList:
   arquivoLogPath='./Individuos/'+ str(count)+'.log'
   logArquivo = open(arquivoLogPath, 'a')
   saidaArquivo=open('./Individuos/'+str(count)+'.saida', 'a')
+  code_error=0
   for line in refArquivo:
     if ":" not in line:
       name=line
+      if len(name) > 50:
+        logArquivo.write('Não será possível criar nenhuma conta para este indivíduo, pois o mesmo possui um nome inválido');
+        code_error=1
+        break
       continue
     if 'criar' not in line and '->' not in line and 'saldo' not in line:
       locals()[line.split(':')[0]] = line.split(':')[1].strip()
+      if len(CPF) != 11:
+        logArquivo.write('Não será possível criar nenhuma conta para este indivíduo, pois o mesmo possui um CPF inválido');
+        code_error=1
+        break
     if 'criar' in line:
       if 'contaCorrente' in line:
         saldoInicial=takeValue(refArquivo.readline())
@@ -106,12 +115,13 @@ for arg in argsList:
           contaCorrenteObj.rendimento(dias[0])
         except Exception as e:
           logArquivo.write(e.__str__()+'\n')
-  saidaArquivo.write('Dados Conta Corrente: '+str(contaCorrenteObj.__dict__)+'\n')
-  saidaArquivo.write('Dados Conta Poupanca: '+str(contaPoupancaObj.__dict__)+'\n')
-  saidaArquivo.write('Dados Conta Investimento: '+str(contaInvestimentoObj.__dict__)+'\n')
-  del contaCorrenteObj
-  del contaPoupancaObj
-  del contaInvestimentoObj
+  if code_error != 1:
+    saidaArquivo.write('Dados Conta Corrente: '+str(contaCorrenteObj.__dict__)+'\n')
+    saidaArquivo.write('Dados Conta Poupanca: '+str(contaPoupancaObj.__dict__)+'\n')
+    saidaArquivo.write('Dados Conta Investimento: '+str(contaInvestimentoObj.__dict__)+'\n')
+    del contaCorrenteObj
+    del contaPoupancaObj
+    del contaInvestimentoObj
   refArquivo.close()
   logArquivo.close()
   saidaArquivo.close()
