@@ -1,0 +1,7 @@
+- [x] Checar rendimentos
+- [x] Metodo __init__ (olhar a aula indicada)
+- [x] Tratamento de metodos e atributos desconhecidos
+- [x] Identificar funcoes de saque e deposito
+- [x] Habilitar metodo with na classe
+- [ ] Separar arquivo para classes de exceções
+- [x] Implementar try->except no aplicativo

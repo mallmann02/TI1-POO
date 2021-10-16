@@ -1,0 +1,24 @@
+Dalvan Griebler
+CPF: 13318822008
+criar: contaCorrente
+saldoInicial: 400
+id: 1001  
+limiteChequeEspecial: -100
+criar: contaPoupanca
+saldoInicial: 500
+id: 4001
+taxaRendimento: 0.5
+criar: contaInvestimento
+saldoInicial: 800
+id: 8001
+tipoRisco: Baixo
+sacar: contaInvestimento -> 20
+sacar: contaCorrente -> 420
+depositar: contaCorrente -> 20
+depositar: contaInvestimento -> 100
+saldo: contaCorrente
+saldo: contaPoupanca
+saldo: contaInvestimento
+rendimento: contaCorrente -> 20 dias
+rendimento: contaPoupanca -> 20 dias
+rendimento: contaInvestimento -> 10 dias

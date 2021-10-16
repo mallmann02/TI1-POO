@@ -1,0 +1,23 @@
+João Carlos
+CPF: 13348822008
+criar: contaCorrente
+saldoInicial: 400
+id: 1002  
+limiteChequeEspecial: -100
+criar: contaPoupanca
+saldoInicial: 500
+id: 4002
+taxaRendimento: 0.5
+criar: contaInvestimento
+saldoInicial: 800
+id: 8002
+tipoRisco: Baixo
+sacar: contaInvestimento -> 40
+sacar: contaCorrente -> 320
+depositar: contaCorrente -> 40
+saldo: contaCorrente
+saldo: contaPoupanca
+saldo: contaInvestimento
+rendimento: contaCorrente -> 40 dias
+rendimento: contaPoupanca -> 40 dias
+rendimento: contaInvestimento -> 30 dias
