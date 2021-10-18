@@ -151,7 +151,10 @@ class ContaBancaria(metaclass=ABCMeta):
   def rendimento(self, dias): pass
   
   def consultaSaldo(self):
-    print('Seu saldo é: R$ %.2f' % self._saldo)
+    if isinstance(self._saldo, int or float):
+      print('Seu saldo é: R$ %.2f' % self._saldo)
+    else:
+      print('Seu saldo é: R$ %.2f' % self._saldo.valor)
   
   def saque(self, valorSaque):
     if valorSaque > self._saldo or valorSaque < 0:
