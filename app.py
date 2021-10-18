@@ -12,6 +12,9 @@ for arg in argsList:
   logArquivo = open(arquivoLogPath, 'a')
   saidaArquivo=open('./Individuos/'+str(count)+'.saida', 'a')
   code_error=0
+  contaCorrenteObj=None
+  contaInvestimentoObj=None
+  contaPoupancaObj=None
   for line in refArquivo:
     if ":" not in line:
       name=line
@@ -116,9 +119,18 @@ for arg in argsList:
         except Exception as e:
           logArquivo.write(e.__str__()+'\n')
   if code_error != 1:
-    saidaArquivo.write('Dados Conta Corrente: '+str(contaCorrenteObj.__dict__)+'\n')
-    saidaArquivo.write('Dados Conta Poupanca: '+str(contaPoupancaObj.__dict__)+'\n')
-    saidaArquivo.write('Dados Conta Investimento: '+str(contaInvestimentoObj.__dict__)+'\n')
+    try:
+      saidaArquivo.write('Dados Conta Corrente: '+str(contaCorrenteObj.__dict__)+'\n')
+    except Exception as e:
+      logArquivo.write(e+'\n');
+    try:
+      saidaArquivo.write('Dados Conta Poupanca: '+str(contaPoupancaObj.__dict__)+'\n')
+    except Exception as e:
+      logArquivo.write(e+'\n');
+    try:
+      saidaArquivo.write('Dados Conta Investimento: '+str(contaInvestimentoObj.__dict__)+'\n')
+    except Exception as e:
+      logArquivo.write(e+'\n');
     del contaCorrenteObj
     del contaPoupancaObj
     del contaInvestimentoObj
