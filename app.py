@@ -7,10 +7,11 @@ def takeValue(str):
   return str.split(':')[1].strip()
 
 for arg in argsList:
+  readFileName=str(arg).split('/')[2].split('.')[0]
   refArquivo = open(arg, 'r');
-  arquivoLogPath='./Individuos/'+ str(count)+'.log'
+  arquivoLogPath='./Individuos/'+str(readFileName)+'.log'
   logArquivo = open(arquivoLogPath, 'a')
-  saidaArquivo=open('./Individuos/'+str(count)+'.saida', 'a')
+  saidaArquivo=open('./Individuos/'+str(readFileName)+'.saida', 'a')
   code_error=0
   contaCorrenteObj=None
   contaInvestimentoObj=None
