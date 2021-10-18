@@ -9,28 +9,28 @@ class Moeda:
         novo_valor=self.valor+outro
     else:
         novo_valor=self.valor+outro.valor
-    return novo_valor
+    return Moeda(novo_valor)
 
   def __sub__(self,outro):
     if isinstance(outro, float):
         novo_valor=self.valor-outro
     else:
         novo_valor=self.valor-outro.valor
-    return novo_valor
+    return Moeda(novo_valor)
 
   def __iadd__(self, outro):
     if isinstance(outro, float) or isinstance(outro, int):
       novo_valor=self.valor+outro
     else:
       novo_valor=self.valor+outro.valor
-    return novo_valor
+    return Moeda(novo_valor)
   
   def __isub__(self, outro):
     if isinstance(outro, float) or isinstance(outro, int):
       novo_valor=self.valor-outro
     else:
       novo_valor=self.valor-outro.valor
-    return novo_valor
+    return Moeda(novo_valor)
   
   def __mul__(self, outro):
     if isinstance(outro, float) or isinstance(outro, int):
@@ -142,7 +142,6 @@ class ContaBancaria(metaclass=ABCMeta):
     print(str(self.numeroContas))
 
   def deposito(self, valorDeposito):
-    self._saldo = Moeda(self._saldo)
     if valorDeposito < 0:
       raise ErroDepositoInvalido(valorDeposito);
     self._saldo += valorDeposito;
