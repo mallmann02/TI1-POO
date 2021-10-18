@@ -5,6 +5,7 @@
 - Amadurecimento do conteúdo -> ótimo
 - Interpretação do problema -> bom
 - Regras de negócio -> pouca dificuldade
+- Uso da cláusula with -> dificuldade
 
   Logo no começo do trabalho senti uma dificuldade para a criação
 das classes abstratas a interação destas com as classes herdadas.
@@ -17,9 +18,12 @@ de tratamento de erros. Saio do trabalho bem satisfeito, aprendi bastante de POO
 hoje consigo discuitr com os termos da matéria. Acredito que tive um desenvolvimento
 contínuo desde o primeiro dia e consegui acabar o trabalho aprendendo. Deixo a seguir o
 meu checkpoint da aula de quarta-feira (13/10), quando tirei minhas últimas dúvidas.
+  Na aula de segunda-feira (18/10), conversei com um colega sobre um maneira mais fácil
+de tratar os erros, com um encapsulamento mais inteligente do try-except, porém manterei
+a minha estrutura até por motivos de transparência intelectual.
 ## 13/10
 - [x] Checar rendimentos
 - [x] Arquivo __init__ (olhar a aula indicada)
-- [x] Tratamento de metodos e atributos desconhecidos
-- [x] Identificar funcoes de saque e deposito
-- [x] Habilitar metodo with na classe
+- [x] Tratamento de métodos e atributos desconhecidos
+- [x] Identificar funções de saque e depósito
+- [x] Habilitar método with na classe
