@@ -122,14 +122,17 @@ for arg in argsList:
   if code_error != 1:
     try:
       saidaArquivo.write('Dados Conta Corrente: '+str(contaCorrenteObj.__dict__)+'\n')
+      saidaArquivo.write('Balanço final: R$ %.2f'%int(contaCorrenteObj._saldo.valor)+'\n\n')
     except Exception as e:
       logArquivo.write(str(e)+'\n');
     try:
       saidaArquivo.write('Dados Conta Poupanca: '+str(contaPoupancaObj.__dict__)+'\n')
+      saidaArquivo.write('Balanço final: R$ %.2f'%int(contaPoupancaObj._saldo.valor)+'\n\n')
     except Exception as e:
       logArquivo.write(str(e)+'\n');
     try:
       saidaArquivo.write('Dados Conta Investimento: '+str(contaInvestimentoObj.__dict__)+'\n')
+      saidaArquivo.write('Balanço final: R$ %.2f'%int(contaInvestimentoObj._saldo.valor)+'\n\n')
     except Exception as e:
       logArquivo.write(str(e)+'\n');
     del contaCorrenteObj
