@@ -122,15 +122,15 @@ for arg in argsList:
     try:
       saidaArquivo.write('Dados Conta Corrente: '+str(contaCorrenteObj.__dict__)+'\n')
     except Exception as e:
-      logArquivo.write(e+'\n');
+      logArquivo.write(str(e)+'\n');
     try:
       saidaArquivo.write('Dados Conta Poupanca: '+str(contaPoupancaObj.__dict__)+'\n')
     except Exception as e:
-      logArquivo.write(e+'\n');
+      logArquivo.write(str(e)+'\n');
     try:
       saidaArquivo.write('Dados Conta Investimento: '+str(contaInvestimentoObj.__dict__)+'\n')
     except Exception as e:
-      logArquivo.write(e+'\n');
+      logArquivo.write(str(e)+'\n');
     del contaCorrenteObj
     del contaPoupancaObj
     del contaInvestimentoObj
