@@ -85,12 +85,18 @@ def status_conta():
   print('Numero total de contas corrente criadas: ', ContaBancaria.numeroContaCorrente);
 
 def saque_verboso(objeto, valor):
-  print(objeto.__dict__)
+  try:
+    print(objeto.__dict__)
+  except Exception as e:
+    pass
   try:
     objeto.saque(valor)
   except Exception as e:
     pass
-  objeto.consultaSaldo()
+  try:
+    objeto.consultaSaldo()
+  except Exception as e:
+    pass
 
 class ContaBancaria(metaclass=ABCMeta):
   numeroContas=0
