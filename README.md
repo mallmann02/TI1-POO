@@ -13,15 +13,14 @@
   - consultaSaldo(): Retorna o saldo atual da conta
   - saque(): Realiza um saque na conta (decrementa o saldo)
   - deposito(): Realiza um deposito na conta (incrementa o saldo)
-  - statusContas(): Retornar quantas classes foram criadas
   - rendimento(): Contrato implementado nas classes filhas
-
 ### Funções Genéricas:
   - saque_verboso: Mostra os atributos de uma conta, realiza um saque e mostra o saldo.
+  - status_contas: Mostra quantas contas de cada tipo foram criadas e ao todo também.
 
 # Forma de uso:
   Existe um arquivo app.py que executa as operações dentro das classes com base em instruções que são interpretadas de um arquivo de texto.
-  - Para usar, basta executar o comando a seguir na linha de comando: # python3 app.py /Individuos/<nome_do_arquivo>.txt /Individuos/<nome_do_arquivo2>.txt ...
+  - Para usar, basta executar o comando a seguir na linha de comando: # python3 ./app.py ./Individuos/<nome_do_arquivo>.txt ./Individuos/<nome_do_arquivo2>.txt ...
 
   Obs: A pasta indivíduos já esta criada, deve-se apenas colocar os arquivos de texto.
 
